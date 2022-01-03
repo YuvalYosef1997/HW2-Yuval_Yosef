@@ -8,20 +8,25 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class UserViewHolder extends RecyclerView.ViewHolder {
+public class CarViewHolder extends RecyclerView.ViewHolder {
 
     public CardView card;
     public ImageView avatar;
-    public TextView name;
-    public TextView email;
+    public TextView brand;
+    public TextView model;
+    public TextView year;
+    public TextView price;
 
-    public UserViewHolder(@NonNull View itemView) {
+
+    public CarViewHolder(@NonNull View itemView) {
         super(itemView);
 
         card = itemView.findViewById(R.id.card);
         avatar = itemView.findViewById(R.id.avater);
-        name = itemView.findViewById(R.id.name);
-        email = itemView.findViewById(R.id.email);
+        brand = itemView.findViewById(R.id.brand);
+        model = itemView.findViewById(R.id.model);
+        year = itemView.findViewById(R.id.year);
+        price = itemView.findViewById(R.id.price);
 
     }
 }

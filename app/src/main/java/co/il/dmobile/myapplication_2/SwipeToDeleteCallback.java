@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback{
 
-    private UserAdapter adapter;
+    private CarAdapter adapter;
 
-    public SwipeToDeleteCallback(UserAdapter adapter) {
+    public SwipeToDeleteCallback(CarAdapter adapter) {
         super(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }
@@ -21,6 +21,6 @@ public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback{
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         int pos = viewHolder.getAdapterPosition();
-        adapter.DeleteContact(pos);
+        adapter.DeleteCar(pos);
     }
 }

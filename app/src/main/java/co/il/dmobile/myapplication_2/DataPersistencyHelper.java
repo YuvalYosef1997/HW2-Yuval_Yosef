@@ -15,36 +15,36 @@ public class DataPersistencyHelper {
 
     public static Context Context;
 
-    public static void StoreData(List<User> users)
+    public static void StoreData(List<Car> cars)
     {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(Context);
         SharedPreferences.Editor editor = sp.edit();
-        String json = new Gson().toJson(users );
-        editor.putString("users", json);
+        String json = new Gson().toJson(cars);
+        editor.putString("cars", json);
         editor.commit();
     }
 
-    public static List<User> LoadData()
+    public static List<Car> LoadData()
     {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(Context);
-        String json = sp.getString("users",null);
+        String json = sp.getString("cars",null);
         if (json != null)
         {
-            Type type = new TypeToken<List<User>>(){}.getType();
+            Type type = new TypeToken<List<Car>>(){}.getType();
             return new Gson().fromJson(json,type);
         }
         else
         {
-            List<User> users = new ArrayList<User>();
-            users.add(new User(R.drawable.avatar1,"Contact 1","contact1@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar2,"Contact 2","contact2@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar3,"Contact 3","contact3@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar4,"Contact 4","contact4@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar5,"Contact 5","contact5@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar6,"Contact 6","contact6@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar7,"Contact 7","contact7@post.idc.ac.il"));
-            users.add(new User(R.drawable.avatar8,"Contact 8","contact8@post.idc.ac.il"));
-            return users;
+            List<Car> cars = new ArrayList<Car>();
+            cars.add(new Car(R.drawable.car1,"Mazda","Mazda-6","2019","$55K"));
+            cars.add(new Car(R.drawable.car2,"Hyundai","i-20","2020","$60K"));
+            cars.add(new Car(R.drawable.car3,"Jeep","Grand-Cherokee","2020","$200K"));
+            cars.add(new Car(R.drawable.car4,"Jeep","Gladiator","2019","$180K"));
+            cars.add(new Car(R.drawable.car5,"Audi","SUV7","2020","$250K"));
+            cars.add(new Car(R.drawable.car6,"Tesla","Model S","2021","$150K"));
+            cars.add(new Car(R.drawable.car7,"Hyundai","Tucson","2019","$30K"));
+            cars.add(new Car(R.drawable.car8,"Mercedes-Benz","G-Wagon","2020","$300K"));
+            return cars;
         }
     }
 
